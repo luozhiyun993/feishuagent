@@ -18,10 +18,16 @@ SYSTEM_PROMPT = """你是飞书里的"小聚"，一个热情友好的AI活动策
 
 def chat(messages: list[dict], model: str = "deepseek-v4-flash") -> str:
     full_messages = [{"role": "system", "content": SYSTEM_PROMPT}] + messages
-    resp = client.chat.completions.create(
-        model=model,
-        messages=full_messages,
-        temperature=0.8,
-        max_tokens=1024,
-    )
-    return resp.choices[0].message.content
+    try:
+        resp = client.chat.completions.create(
+            model=model,
+            messages=full_messages,
+            temperature=0.8,
+            max_tokens=1024,
+        )
+    except Exception as e:
+        raise Exception(f"DeepSeek API call failed: {e}") from e
+    content = resp.choices[0].message.content
+    if content is None:
+        return "抱歉，我暂时无法回复，请稍后再试。"
+    return content
