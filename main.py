@@ -1,9 +1,24 @@
 import json
 import logging
 import os
+import ssl
+
 import lark_oapi as lark
+import lark_oapi.ws.client as _ws_client
 from lark_oapi.api.im.v1 import P2ImMessageReceiveV1
 from dotenv import load_dotenv
+
+# Patch SSL for corporate network proxy
+_orig_ws_kwargs = _ws_client._ws_connect_kwargs
+
+
+def _patched_ws_kwargs():
+    kwargs = _orig_ws_kwargs()
+    kwargs["ssl"] = ssl._create_unverified_context()
+    return kwargs
+
+
+_ws_client._ws_connect_kwargs = _patched_ws_kwargs
 
 load_dotenv()
 
