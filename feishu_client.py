@@ -36,9 +36,13 @@ class FeishuClient:
             ) \
             .build()
         response = self._client.im.v1.message.create(request)
-        if not response.success():
+        if response.success():
+            lark.logger.info(
+                f"send_text OK, message_id: {response.data.message_id}"
+            )
+        else:
             lark.logger.error(
-                f"send_text failed, code: {response.code}, msg: {response.msg}"
+                f"send_text FAILED, code: {response.code}, msg: {response.msg}"
             )
         return response
 
