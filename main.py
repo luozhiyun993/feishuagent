@@ -1,6 +1,8 @@
 import json
 import logging
-import websocket
+import os
+import lark_oapi as lark
+from lark_oapi.api.im.v1 import P2ImMessageReceiveV1
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,22 +19,17 @@ log = logging.getLogger(__name__)
 feishu = FeishuClient()
 conv_mgr = ConversationManager()
 
-FEISHU_WS_URL = "wss://open.feishu.cn/open-apis/event/v1"
 
-
-def on_message(ws, raw):
-    log.info(f"WS message received (first 500 chars): {raw[:500]}")
+def on_message_receive(data: P2ImMessageReceiveV1) -> None:
     try:
-        event = json.loads(raw)
-        event_type = event.get("header", {}).get("event_type", "")
-        if event_type != "im.message.receive_v1":
-            return
-        msg = event.get("event", {}).get("message", {})
-        chat_id = msg.get("chat_id", "")
-        msg_type = msg.get("message_type", "")
+        msg = data.event.message
+        chat_id = msg.chat_id
+        msg_type = msg.message_type
+
         if msg_type != "text":
             return
-        content_str = msg.get("content", "{}")
+
+        content_str = msg.content
         content = json.loads(content_str)
         user_text = content.get("text", "")
         if not user_text or not chat_id:
@@ -52,31 +49,21 @@ def on_message(ws, raw):
         log.error(f"Error processing message: {e}", exc_info=True)
 
 
-def on_error(ws, error):
-    log.error(f"WebSocket error: {error}")
-
-
-def on_close(ws, code, msg):
-    log.info(f"WebSocket closed: code={code} msg={msg}")
-
-
-def on_open(ws):
-    log.info("WebSocket connected to Feishu")
-
-
 def main():
-    token = feishu.get_token()
-    log.info("Got tenant access token, connecting to WebSocket...")
+    APP_ID = os.environ["FEISHU_APP_ID"]
+    APP_SECRET = os.environ["FEISHU_APP_SECRET"]
 
-    ws = websocket.WebSocketApp(
-        FEISHU_WS_URL,
-        header={"Authorization": f"Bearer {token}"},
-        on_message=on_message,
-        on_error=on_error,
-        on_close=on_close,
-        on_open=on_open,
+    event_handler = lark.EventDispatcherHandler.builder("", "") \
+        .register_p2_im_message_receive_v1(on_message_receive) \
+        .build()
+
+    cli = lark.ws.Client(
+        APP_ID, APP_SECRET,
+        event_handler=event_handler,
+        log_level=lark.LogLevel.INFO,
     )
-    ws.run_forever()
+    log.info("Starting Feishu AI Event Planner Bot...")
+    cli.start()
 
 
 if __name__ == "__main__":
