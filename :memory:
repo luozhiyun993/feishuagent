@@ -1,0 +1,19 @@
+{
+  "chat-10": {
+    "state": "collecting",
+    "activity_type": "烧烤活动",
+    "people": "",
+    "time": "",
+    "location": "",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想再组织一次烧烤"
+      },
+      {
+        "role": "assistant",
+        "content": "新的活动收到啦"
+      }
+    ]
+  }
+}

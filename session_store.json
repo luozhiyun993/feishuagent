@@ -1,0 +1,307 @@
+{
+  "chat-1": {
+    "state": "confirm",
+    "activity_type": "羽毛球活动",
+    "people": "同事们一起",
+    "time": "下周六下午三点",
+    "location": "静安体育中心",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想周末组织一次羽毛球活动"
+      },
+      {
+        "role": "assistant",
+        "content": "先问人"
+      },
+      {
+        "role": "user",
+        "content": "下周六下午三点，静安体育中心"
+      },
+      {
+        "role": "assistant",
+        "content": "继续确认"
+      },
+      {
+        "role": "user",
+        "content": "同事们一起"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认"
+      },
+      {
+        "role": "user",
+        "content": "我想周末组织一次羽毛球活动"
+      },
+      {
+        "role": "assistant",
+        "content": "先问人"
+      },
+      {
+        "role": "user",
+        "content": "下周六下午三点，静安体育中心"
+      },
+      {
+        "role": "assistant",
+        "content": "继续确认"
+      },
+      {
+        "role": "user",
+        "content": "同事们一起"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认"
+      }
+    ]
+  },
+  "chat-3": {
+    "state": "done",
+    "activity_type": "羽毛球活动",
+    "people": "同事们一起",
+    "time": "下周六下午三点",
+    "location": "静安体育中心",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想周末和同事在静安体育中心打羽毛球，下周六下午三点"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认完整信息"
+      },
+      {
+        "role": "user",
+        "content": "确认"
+      },
+      {
+        "role": "assistant",
+        "content": "活动卡片已生成"
+      }
+    ]
+  },
+  "chat-6": {
+    "state": "collecting",
+    "activity_type": "烧烤活动",
+    "people": "",
+    "time": "",
+    "location": "",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想再组织一次烧烤"
+      },
+      {
+        "role": "assistant",
+        "content": "新的活动收到啦"
+      }
+    ]
+  },
+  "chat-5": {
+    "state": "collecting",
+    "activity_type": "",
+    "people": "",
+    "time": "",
+    "location": "",
+    "history": [
+      {
+        "role": "user",
+        "content": "随便聊聊"
+      },
+      {
+        "role": "assistant",
+        "content": "我先确认一下，你想办什么活动？"
+      },
+      {
+        "role": "user",
+        "content": "随便聊聊"
+      },
+      {
+        "role": "assistant",
+        "content": "我先确认一下，你想办什么活动？"
+      }
+    ]
+  },
+  "chat-4": {
+    "state": "confirm",
+    "activity_type": "羽毛球活动",
+    "people": "同事们一起",
+    "time": "下周日上午十点",
+    "location": "静安体育中心",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想周末和同事在静安体育中心打羽毛球，下周六下午三点"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认完整信息"
+      },
+      {
+        "role": "user",
+        "content": "时间改成下周日上午十点"
+      },
+      {
+        "role": "assistant",
+        "content": "已更新，请再次确认"
+      },
+      {
+        "role": "user",
+        "content": "我想周末和同事在静安体育中心打羽毛球，下周六下午三点"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认完整信息"
+      },
+      {
+        "role": "user",
+        "content": "时间改成下周日上午十点"
+      },
+      {
+        "role": "assistant",
+        "content": "已更新，请再次确认"
+      }
+    ]
+  },
+  "chat-7": {
+    "state": "done",
+    "activity_type": "羽毛球活动",
+    "people": "同事们一起",
+    "time": "下周六下午三点",
+    "location": "静安体育中心",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想周末和同事在静安体育中心打羽毛球，下周六下午三点"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认完整信息"
+      },
+      {
+        "role": "user",
+        "content": "确认"
+      },
+      {
+        "role": "assistant",
+        "content": "活动卡片已生成"
+      },
+      {
+        "role": "user",
+        "content": "帮我重新生成一次活动邀请"
+      },
+      {
+        "role": "assistant",
+        "content": "重新生成好了"
+      }
+    ]
+  },
+  "chat-8": {
+    "state": "collecting",
+    "activity_type": "团建",
+    "people": "同事一起",
+    "time": "",
+    "location": "",
+    "history": [
+      {
+        "role": "user",
+        "content": "这次我想要邀请同事一起去参加一次团建"
+      },
+      {
+        "role": "assistant",
+        "content": "收到，这次是同事团建，我还差时间和地点"
+      }
+    ]
+  },
+  "chat-2": {
+    "state": "confirm",
+    "activity_type": "羽毛球活动",
+    "people": "同事们一起",
+    "time": "下周六下午三点",
+    "location": "静安体育中心",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想周末和同事在静安体育中心打羽毛球，下周六下午三点"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认完整信息"
+      },
+      {
+        "role": "user",
+        "content": "我想周末和同事在静安体育中心打羽毛球，下周六下午三点"
+      },
+      {
+        "role": "assistant",
+        "content": "请确认完整信息"
+      }
+    ]
+  },
+  "oc_926349ad04ebfdaaba31dacfffc6edf8": {
+    "state": "done",
+    "activity_type": "聚餐",
+    "people": "5",
+    "time": "本周六中午 12 点",
+    "location": "公司",
+    "history": [
+      {
+        "role": "user",
+        "content": "我想要组织一个聚餐"
+      },
+      {
+        "role": "assistant",
+        "content": "好呀！聚餐超棒的！🍽️ 那这次大概会有几个人一起参加呀？"
+      },
+      {
+        "role": "user",
+        "content": "我想要组织一个聚餐"
+      },
+      {
+        "role": "assistant",
+        "content": "好嘞，聚餐安排起来！🎉 先说说大概有几个人参加呀？这样我好帮你挑合适的地方～"
+      },
+      {
+        "role": "user",
+        "content": "本周六中午 12 点"
+      },
+      {
+        "role": "assistant",
+        "content": "好的，周六中午12点记下啦～🎉 那这次聚餐大概有几个人参加呀？我好帮你想合适的餐厅～"
+      },
+      {
+        "role": "user",
+        "content": "我上面说了 5 个人"
+      },
+      {
+        "role": "assistant",
+        "content": "哦对对对，5个人我已经记下啦～ 🎉 那咱们这周六中午的聚餐，地点定在哪里呀？有没有想去的餐厅或者大概的区域？"
+      },
+      {
+        "role": "user",
+        "content": "同事"
+      },
+      {
+        "role": "assistant",
+        "content": "哦，是同事聚餐呀，那一定很热闹！😄 你们打算去哪里吃呢？有没有想好的餐厅或者区域？"
+      },
+      {
+        "role": "user",
+        "content": "在公司集合就好了"
+      },
+      {
+        "role": "assistant",
+        "content": "好嘞，那我整理一下咱们的活动信息，你看看对不对～ 😊\n\n🎉 **活动小聚规划**\n- **类型**：聚餐\n- **人数**：5人\n- **时间**：本周六 中午12点\n- **集合地点**：公司\n\n所有信息都准吗？有没有需要调整的地方？比如时间、人数或者有啥特别想吃的？随时跟我说哈～ 🍔🍕"
+      },
+      {
+        "role": "user",
+        "content": "准的"
+      },
+      {
+        "role": "assistant",
+        "content": "搞定！🎉 活动卡片已经生成啦～可以去飞书消息里查看，转发给小伙伴们一起嗨起来！🍽️"
+      }
+    ]
+  }
+}
